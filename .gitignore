@@ -1,5 +1,7 @@
+# dont track ponzu build & deploy files
 search
 uploads
+system
 analytics.db
 system.db
 ponzu-server
