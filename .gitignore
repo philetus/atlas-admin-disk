@@ -6,4 +6,3 @@ analytics.db
 system.db
 ponzu-server
 server.log
-cmd/ponzu/vendor
