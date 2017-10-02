@@ -5,8 +5,8 @@ import (
 
 	"github.com/bosssauce/reference"
 
-	"github.com/ponzu-cms/ponzu/management/editor"
-	"github.com/ponzu-cms/ponzu/system/item"
+	"github.com/ponzu-k8s/ponzu/management/editor"
+	"github.com/ponzu-k8s/ponzu/system/item"
 )
 
 // Media ->

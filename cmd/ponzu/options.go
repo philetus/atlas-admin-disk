@@ -51,7 +51,7 @@ func newProjectInDir(path string) error {
 	return createProjectInDir(path)
 }
 
-var ponzuRepo = []string{"github.com", "ponzu-cms", "ponzu"}
+var ponzuRepo = []string{"github.com", "ponzu-k8s", "ponzu"}
 
 func getAnswer() (string, error) {
 	var answer string
@@ -164,7 +164,7 @@ func createProjectInDir(path string) error {
 }
 
 func vendorCorePackages(path string) error {
-	vendorPath := filepath.Join(path, "cmd", "ponzu", "vendor", "github.com", "ponzu-cms", "ponzu")
+	vendorPath := filepath.Join(path, "cmd", "ponzu", "vendor", "github.com", "ponzu-k8s", "ponzu")
 	err := os.MkdirAll(vendorPath, os.ModeDir|os.ModePerm)
 	if err != nil {
 		return err
@@ -289,7 +289,7 @@ func buildPonzuServer(args []string) error {
 
 	// copy all ./content files to internal vendor directory
 	src := "content"
-	dst := filepath.Join("cmd", "ponzu", "vendor", "github.com", "ponzu-cms", "ponzu", "content")
+	dst := filepath.Join("cmd", "ponzu", "vendor", "github.com", "ponzu-k8s", "ponzu", "content")
 	err = emptyDir(dst)
 	if err != nil {
 		return err
@@ -307,7 +307,7 @@ func buildPonzuServer(args []string) error {
 		return err
 	}
 
-	// execute go build -o ponzu-cms cmd/ponzu/*.go
+	// execute go build -o ponzu-k8s cmd/ponzu/*.go
 	buildOptions := []string{"build", "-o", buildOutputName()}
 	cmdBuildFiles := []string{
 		"main.go", "options.go", "generate.go",

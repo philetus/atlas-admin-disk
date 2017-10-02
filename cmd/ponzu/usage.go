@@ -44,7 +44,7 @@ new <directory>
 	immediately following the 'new' option in the $GOPATH/src directory. Note: 
 	'new' depends on the program 'git' and possibly a network connection. If 
 	there is no local repository to clone from at the local machine's $GOPATH, 
-	'new' will attempt to clone the 'github.com/ponzu-cms/ponzu' package from 
+	'new' will attempt to clone the 'github.com/ponzu-k8s/ponzu' package from 
 	over the network.
 
 	Example:
@@ -137,7 +137,7 @@ upgrade
 	Will backup your own custom project code (like content, addons, uploads, etc) so
 	we can safely re-clone Ponzu from the latest version you have or from the network 
 	if necessary. Before running '$ ponzu upgrade', you should update the 'ponzu'
-	package by running '$ go get -u github.com/ponzu-cms/ponzu/...' 
+	package by running '$ go get -u github.com/ponzu-k8s/ponzu/...' 
 
 	Example:
 	$ ponzu upgrade
@@ -183,7 +183,7 @@ func ponzu(isCLI bool) (map[string]interface{}, error) {
 		if err != nil {
 			return nil, err
 		}
-		repo := filepath.Join(gopath, "src", "github.com", "ponzu-cms", "ponzu")
+		repo := filepath.Join(gopath, "src", "github.com", "ponzu-k8s", "ponzu")
 		info = filepath.Join(repo, "cmd", "ponzu", "ponzu.json")
 	}
 

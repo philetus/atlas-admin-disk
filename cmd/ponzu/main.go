@@ -10,13 +10,13 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/ponzu-cms/ponzu/system/admin"
-	"github.com/ponzu-cms/ponzu/system/api"
-	"github.com/ponzu-cms/ponzu/system/api/analytics"
-	"github.com/ponzu-cms/ponzu/system/db"
-	"github.com/ponzu-cms/ponzu/system/tls"
+	"github.com/ponzu-k8s/ponzu/system/admin"
+	"github.com/ponzu-k8s/ponzu/system/api"
+	"github.com/ponzu-k8s/ponzu/system/api/analytics"
+	"github.com/ponzu-k8s/ponzu/system/db"
+	"github.com/ponzu-k8s/ponzu/system/tls"
 
-	_ "github.com/ponzu-cms/ponzu/content"
+	_ "github.com/ponzu-k8s/ponzu/content"
 )
 
 var (

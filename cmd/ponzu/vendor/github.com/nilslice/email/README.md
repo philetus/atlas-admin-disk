@@ -1,6 +1,6 @@
 ## Email
 
-I needed a way to send email from a [Ponzu](https://ponzu-cms.org) installation 
+I needed a way to send email from a [Ponzu](https://ponzu-k8s.org) installation 
 running on all kinds of systems without shelling out. `sendmail` or `postfix` et 
 al are not standard on all systems, and I didn't want to force users to add API 
 keys from a third-party just to send something like an account recovery email. 
