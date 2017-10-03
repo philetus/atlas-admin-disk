@@ -7,7 +7,6 @@ import (
 	"github.com/ponzu-k8s/ponzu/system/item"
 )
 
-// Person -> describes atlas member or peer
 type Person struct {
 	item.Item
 
@@ -37,12 +36,7 @@ func (p *Person) MarshalEditor() ([]byte, error) {
 			View: editor.Select("Role", p, map[string]string{
 				"label": "Role",
 			}, map[string]string{
-				// "value": "Display Name",
-				"peer":       "peer (not atlas member)",
-				"faculty":    "faculty",
-				"researcher": "researcher",
-				"student":    "student",
-				"alumnus":    "alumnus",
+			// "value": "Display Name",
 			}),
 		},
 		editor.Field{
@@ -83,6 +77,8 @@ func init() {
 	item.Types["Person"] = func() interface{} { return new(Person) }
 }
 
+// String defines how a Person is printed. Update it using more descriptive
+// fields from the Person struct type
 func (p *Person) String() string {
-	return p.Name
+	return fmt.Sprintf("Person: %s", p.UUID)
 }

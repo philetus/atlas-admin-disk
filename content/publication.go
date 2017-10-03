@@ -9,7 +9,6 @@ import (
 	"github.com/ponzu-k8s/ponzu/system/item"
 )
 
-// Publication ->
 type Publication struct {
 	item.Item
 
@@ -43,13 +42,7 @@ func (p *Publication) MarshalEditor() ([]byte, error) {
 			View: editor.Select("Format", p, map[string]string{
 				"label": "Format",
 			}, map[string]string{
-				// "value": "Display Name",
-				"journal-article":  "journal article",
-				"conference-paper": "conference paper",
-				"poster":           "poster",
-				"technical-report": "technical report",
-				"book":             "book",
-				"thesis":           "thesis",
+			// "value": "Display Name",
 			}),
 		},
 		editor.Field{
@@ -120,6 +113,8 @@ func init() {
 	item.Types["Publication"] = func() interface{} { return new(Publication) }
 }
 
+// String defines how a Publication is printed. Update it using more descriptive
+// fields from the Publication struct type
 func (p *Publication) String() string {
-	return p.Title
+	return fmt.Sprintf("Publication: %s", p.UUID)
 }

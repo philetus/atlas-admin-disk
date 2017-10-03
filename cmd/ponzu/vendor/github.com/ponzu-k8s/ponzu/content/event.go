@@ -9,7 +9,6 @@ import (
 	"github.com/ponzu-k8s/ponzu/system/item"
 )
 
-// Event ->
 type Event struct {
 	item.Item
 
@@ -114,6 +113,8 @@ func init() {
 	item.Types["Event"] = func() interface{} { return new(Event) }
 }
 
+// String defines how a Event is printed. Update it using more descriptive
+// fields from the Event struct type
 func (e *Event) String() string {
-	return e.Title + " @ " + e.Start
+	return fmt.Sprintf("Event: %s", e.UUID)
 }

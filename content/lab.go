@@ -9,7 +9,6 @@ import (
 	"github.com/ponzu-k8s/ponzu/system/item"
 )
 
-// Lab ->
 type Lab struct {
 	item.Item
 
@@ -97,6 +96,8 @@ func init() {
 	item.Types["Lab"] = func() interface{} { return new(Lab) }
 }
 
+// String defines how a Lab is printed. Update it using more descriptive
+// fields from the Lab struct type
 func (l *Lab) String() string {
-	return l.Name
+	return fmt.Sprintf("Lab: %s", l.UUID)
 }

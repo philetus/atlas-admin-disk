@@ -9,7 +9,6 @@ import (
 	"github.com/ponzu-k8s/ponzu/system/item"
 )
 
-// Media ->
 type Media struct {
 	item.Item
 
@@ -53,13 +52,7 @@ func (m *Media) MarshalEditor() ([]byte, error) {
 			View: editor.Select("Flavor", m, map[string]string{
 				"label": "Flavor",
 			}, map[string]string{
-				// "value": "Display Name",
-				"website":       "website",
-				"youtube-video": "youtube video",
-				"github":        "github",
-				"news-story":    "news story",
-				"instagram":     "instagram (stream)",
-				"flickr":        "flickr (stream)",
+			// "value": "Display Name",
 			}),
 		},
 		editor.Field{
@@ -150,6 +143,8 @@ func init() {
 	item.Types["Media"] = func() interface{} { return new(Media) }
 }
 
+// String defines how a Media is printed. Update it using more descriptive
+// fields from the Media struct type
 func (m *Media) String() string {
-	return m.Title + " @ " + m.Url
+	return fmt.Sprintf("Media: %s", m.UUID)
 }

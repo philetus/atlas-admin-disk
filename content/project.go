@@ -9,7 +9,6 @@ import (
 	"github.com/ponzu-k8s/ponzu/system/item"
 )
 
-// Project ->
 type Project struct {
 	item.Item
 
@@ -90,14 +89,8 @@ func init() {
 	item.Types["Project"] = func() interface{} { return new(Project) }
 }
 
+// String defines how a Project is printed. Update it using more descriptive
+// fields from the Project struct type
 func (p *Project) String() string {
-	return p.Name
+	return fmt.Sprintf("Project: %s", p.UUID)
 }
-
-// Push -> tells cms to preemptively push referenced records
-// func (p *Project) Push() []string {
-// 	return []string{ // takes a list of json selectors from project struct
-// 		"researchers",
-// 		"splashimage",
-// 	}
-// }
