@@ -1,0 +1,6 @@
+# dont track ponzu build & deploy files
+/search
+/uploads
+/*.db
+/ponzu-server
+/server.log
